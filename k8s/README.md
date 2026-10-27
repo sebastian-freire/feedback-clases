@@ -26,6 +26,8 @@ el Deployment y el Service de cada aplicación.
    ```
 
    Usar la misma contraseña alfanumérica en las dos primeras líneas.
+   Escribir los valores sin comillas: `--from-env-file` no las quita y las guarda
+   como parte del valor, así la contraseña de la base deja de coincidir con `DATABASE_URL`.
    Se puede generar el JWT_SECRET con `openssl rand -hex 32`.
    Este archivo es exclusivo de Kubernetes y no necesita la misma contraseña
    que la base local de Docker Compose. No subirlo ni compartirlo.
