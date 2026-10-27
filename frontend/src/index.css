@@ -1,0 +1,77 @@
+@import '@fontsource-variable/inter';
+@import 'tailwindcss';
+
+/*
+ * Tokens de diseño: estilo sobrio institucional (D-064).
+ * Fondo blanco, un solo color de marca (azul), grises neutros y líneas finas.
+ * Siempre en modo claro, sin importar la configuración del sistema (D-065).
+ * Las utilidades de Tailwind (bg-surface, text-ink, etc.) leen estas variables.
+ */
+@theme {
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-subtle: var(--subtle);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-on-brand: var(--on-brand);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-face-1: var(--face-1);
+  --color-face-2: var(--face-2);
+  --color-face-3: var(--face-3);
+  --color-face-4: var(--face-4);
+  --color-face-5: var(--face-5);
+}
+
+:root {
+  color-scheme: light;
+  --canvas: #ffffff;
+  --surface: #ffffff;
+  --subtle: #f8fafc;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --brand: #1d4ed8; /* validado para la línea del gráfico (dataviz) */
+  --brand-soft: #eff6ff;
+  --on-brand: #ffffff;
+  --success: #15803d;
+  --success-soft: #f0fdf4;
+  --danger: #b91c1c;
+  --danger-soft: #fef2f2;
+  --face-1: #c2413b;
+  --face-2: #de7e52;
+  --face-3: #8a93a8;
+  --face-4: #4b9f7b;
+  --face-5: #16805a;
+}
+
+/* En @layer base para que las utilidades (por ejemplo outline-none) puedan pisarlas. */
+@layer base {
+  body {
+    background: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
