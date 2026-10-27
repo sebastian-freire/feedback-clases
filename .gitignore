@@ -2,6 +2,7 @@
 .env
 .env.*
 !.env.example
+*.kubeconfig
 
 # Dependencias y builds
 node_modules/
