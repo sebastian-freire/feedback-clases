@@ -10,7 +10,7 @@ function AuthFrame({ title, children }: { title: string; children: ReactNode }) 
       <div className="mb-8">
         <p className="mb-6 text-sm font-semibold tracking-tight text-brand">Feedback de clases</p>
         <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
-        <p className="mt-1.5 text-sm text-muted">Contá qué te pareció cada clase. Tu docente lo lee sin tu nombre.</p>
+        <p className="mt-1.5 text-sm text-muted">Contá qué te pareció cada clase. Tu docente ve las opiniones sin tu nombre.</p>
       </div>
       {children}
     </main>
